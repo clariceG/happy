@@ -40,6 +40,15 @@
       color: #333;
       display: none;
     }
+    a {
+        font-size: 18px;
+        text-decoration: none;
+        margin: 0 20px;
+        color: #fff;
+        background-color: #333;
+        padding: 10px 10px;
+        border-radius: 5px;
+      }
   </style>
 </head>
 <body>
@@ -55,7 +64,9 @@
     </div>
     <button onclick="calculateBMI()">Calculate</button>
     <p id="result"></p>
+    <button><a href="start.php">Back</a></button>
   </div>
+   
 
   <script>
     function calculateBMI() {
@@ -73,8 +84,10 @@
         result.innerHTML = "Your BMI is " + bmi + ", you have a healthy weight.";
       } else if (bmi >= 25 && bmi <= 29.9) {
         result.innerHTML = "Your BMI is " + bmi + ", you are overweight.";
-      } else {
+      } else if (bmi >= 30) {
         result.innerHTML = "Your BMI is " + bmi + ", you are obese.";
+      } else {
+        result.innerHTML = "Invalid data.Please input your weight and height."
       }
       result.style.display = "block";
     }
